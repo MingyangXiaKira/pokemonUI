@@ -1,0 +1,22 @@
+.projectContainer {
+  background-image: url("../../public/img.png"); /* 设置背景图片的路径 */
+  background-size: 100% auto; /* 拉伸图片宽度到100%，高度自动调整 */
+  background-position: center; /* 居中对齐背景图片 */
+  background-repeat: no-repeat; /* 防止背景图片重复 */
+  width: 100vw; /* 确保容器占满整个宽度 */
+  height: 100vh; /* 确保容器占满整个视口高度 */
+  position: relative;
+  .screen {
+    width: 80%;
+    height: 95%;
+    position: absolute;
+    top: 1%;
+    left: 10%;
+    background-color: white;
+    z-index: 998;
+    border-left: 50px solid black;
+    border-right: 50px solid black;
+    border-top: 20px solid black;
+    border-bottom: 20px solid black;
+  }
+}

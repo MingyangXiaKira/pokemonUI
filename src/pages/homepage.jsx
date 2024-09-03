@@ -1,15 +1,24 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+
 import "./homepage.scss";
 import Card from "../Components/Surface/Card";
 import Button from "../Components/Display/Button";
 import Ash from "../Components/Character/Ash";
 import Input from "../Components/Input/Input";
+import { useNavigate } from "react-router-dom";
+
 const Homepage = () => {
-  const [stage, setStage] = useState("stage1");
+  const location = useLocation();
+
+  const [stage, setStage] = useState(location.state?.stage || "stage1");
+
   const [showButton, setShowButton] = useState(false);
   const [showButton2, setShowButton2] = useState(false);
   const [number, setNumber] = useState(1);
-  const buttonRef = useRef(null); // 创建一个按钮的引用
+  const buttonRef = useRef(null);
+  const navigate = useNavigate();
+
   const handleLeftClick = () => {
     setNumber((prevNumber) => (prevNumber > 1 ? prevNumber - 1 : 3));
   };
@@ -17,72 +26,73 @@ const Homepage = () => {
   const handleRightClick = () => {
     setNumber((prevNumber) => (prevNumber < 3 ? prevNumber + 1 : 1));
   };
+
   useEffect(() => {
-    console.log("Number changed to:", number);
-  }, [number]);
-  useEffect(() => {
-    if (stage === "stage2" && showButton2 === true) {
-      console.log("ready");
-      const handleKeyDown = (event) => {
+    const handleKeyDown = (event) => {
+      if (stage === "stage1" && event.key === "Enter") {
+        handleButtonClick();
+      } else if (stage === "stage2" && event.key === "Enter") {
+        navigateBasedOnNumber();
+      } else if (stage === "stage2") {
         if (event.key === "ArrowLeft") {
           handleLeftClick();
         } else if (event.key === "ArrowRight") {
           handleRightClick();
         }
-      };
+      }
+    };
 
-      window.addEventListener("keydown", handleKeyDown);
-    }
+    window.addEventListener("keydown", handleKeyDown);
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      console.log("removed");
     };
-  }, [stage, showButton2]);
+  }, [stage, number, showButton2]);
+
   const handleButtonClick = () => {
     setStage("stage2");
   };
-  const handleKeyDown = (event) => {
-    if (stage === "stage1" && event.key === "Enter") {
-      handleButtonClick();
-    } else if (stage === "stage2" && event.key === "Enter") {
+
+  const navigateBasedOnNumber = () => {
+    if (number === 1) {
+      navigate("/experience");
+    } else if (number === 2) {
+      navigate("/project");
+    } else if (number === 3) {
+      navigate("/contact");
     }
   };
 
   useEffect(() => {
     if (showButton && buttonRef.current) {
-      buttonRef.current.focus(); // 尝试聚焦按钮
+      buttonRef.current.focus();
     }
   }, [showButton]);
 
   useEffect(() => {
     if (stage === "stage1") {
       const timer = setTimeout(() => {
-        setShowButton(true); // 设置 showButton 为 true
-      }, 2500); // 2.5 秒后显示按钮
+        setShowButton(true);
+      }, 2500);
 
-      return () => clearTimeout(timer); // 清理定时器
+      return () => clearTimeout(timer);
     }
   }, [stage]);
 
   useEffect(() => {
     if (stage === "stage2") {
       const timer = setTimeout(() => {
-        setShowButton2(true); // 设置 showButton 为 true
+        setShowButton2(true);
       }, 500);
 
-      return () => clearTimeout(timer); // 清理定时器
+      return () => clearTimeout(timer);
     }
   }, [stage]);
+
   return (
-    <div className="homeContainer" onKeyDown={handleKeyDown}>
+    <div className="homeContainer">
       <div className="screen"></div>
-      <div className="ab">
-        <img src="./ab.png" />
-      </div>
-      <div className="direction">
-        <img src="./direction.png" />
-      </div>
-      <div class="back">
+      <div className="back">
         <Ash stage={stage} number={number} />
         <div className="cardContainer">
           {stage === "stage1" ? (
@@ -110,10 +120,19 @@ const Homepage = () => {
                   <>
                     <Button
                       content={"<-"}
-                      style={{ right: "80px" }}
+                      style={{ right: "165px" }}
                       onClick={handleLeftClick}
                     />
-                    <Button content={"->"} onClick={handleRightClick} />
+                    <Button
+                      content={"->"}
+                      style={{ right: "100px" }}
+                      onClick={handleRightClick}
+                    />
+                    <Button
+                      content={"Continue"}
+                      style={{ right: "-15px" }}
+                      onClick={navigateBasedOnNumber}
+                    />
                   </>
                 )}
               </div>

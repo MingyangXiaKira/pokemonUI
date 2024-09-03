@@ -1,6 +1,15 @@
 import React, { useEffect } from "react";
 import "./ash.scss";
+import Button from "../Display/Button";
+import Card from "../Surface/Card";
 const Ash = ({ stage, number }) => {
+  const descriptions = {
+    1: "Experience",
+    2: "Side Projects",
+    3: "Contact",
+  };
+  const description = descriptions[number];
+
   useEffect(() => {
     if (stage === "stage2") {
       const ashElement = document.querySelector(".ash");
@@ -13,6 +22,7 @@ const Ash = ({ stage, number }) => {
   }, [stage]);
   useEffect(() => {
     if (stage === "stage2") {
+      // change description depends on number
     }
   }, [stage, number]);
   return (
@@ -23,9 +33,19 @@ const Ash = ({ stage, number }) => {
             <div class="base" id="five">
               {stage === "stage2" && (
                 <>
-                  <div class="pokeball" id="first"></div>
-                  <div class="pokeball" id="second"></div>
-                  <div class="pokeball" id="third"></div>
+                  <div
+                    className={`pokeball ${number === 1 ? "jumping" : ""}`}
+                    id="first"
+                  ></div>
+                  <div
+                    className={`pokeball ${number === 2 ? "jumping" : ""}`}
+                    id="second"
+                  ></div>
+                  <div
+                    className={`pokeball ${number === 3 ? "jumping" : ""}`}
+                    id="third"
+                  ></div>
+                  <div className="text">{description}</div>
                 </>
               )}
             </div>
