@@ -1,0 +1,250 @@
+.pokeCard {
+  display: inline-block;
+  padding: 20px 30px;
+  border: 4px solid rgb(24, 24, 24);
+  position: relative;
+  color: white;
+  background-color: rgb(53, 45, 61);
+  box-shadow: inset 0 0 0 6px rgb(183, 66, 48), inset 0 0 0 9px rgb(113, 53, 53),
+    inset 0 0 0 12px rgb(82, 48, 48);
+  .dot1 {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot2 {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot3 {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot4 {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot5 {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot6 {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(24, 24, 24);
+    z-index: 100;
+  }
+  .dot7 {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot8 {
+    content: "";
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot9 {
+    content: "";
+    position: absolute;
+    top: -4px;
+    right: -2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot10 {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot11 {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot12 {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(24, 24, 24);
+    z-index: 100;
+  }
+  .dot13 {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot14 {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot15 {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: -2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot16 {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot17 {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot18 {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(24, 24, 24);
+    z-index: 100;
+  }
+  .dot19 {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot20 {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: -4px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot21 {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: -2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(47, 64, 88);
+    z-index: 100;
+  }
+  .dot22 {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 2px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot23 {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    right: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(113, 53, 53);
+    z-index: 100;
+  }
+  .dot24 {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(24, 24, 24);
+    z-index: 100;
+  }
+}

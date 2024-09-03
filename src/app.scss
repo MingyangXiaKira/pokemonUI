@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; /* 禁用滚动 */
+  height: 100vh; /* 确保 body 高度为视口高度 */
+}
+
+.App {
+  background-color: rgb(47, 64, 88);
+  height: 100vh; /* 确保 App 组件填满视口高度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
