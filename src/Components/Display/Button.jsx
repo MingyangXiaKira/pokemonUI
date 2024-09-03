@@ -1,9 +1,14 @@
 import React from "react";
 import "./button.scss";
-const Button = ({ content, onClick }) => {
+const Button = ({ content, onClick, reference, style }) => {
   return (
     <div className="buttonContainer">
-      <button className="customButton" onClick={onClick}>
+      <button
+        className="customButton"
+        ref={reference}
+        onClick={onClick}
+        style={style}
+      >
         <span className="dot1"></span>
         <span className="dot2"></span>
         <span className="dot3"></span>

@@ -1,4 +1,25 @@
-.input {
+.typing-animation {
   font-family: VT323;
-  text-shadow: 2px 2px rgb(103, 91, 112);
+  font-size: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid white; /* 模拟光标 */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* 使用百分比，让动画适应动态宽度 */
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: white;
+  }
 }

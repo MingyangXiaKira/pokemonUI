@@ -1,5 +1,6 @@
 .buttonContainer {
   .customButton {
+    outline: none;
     background-color: rgb(50, 48, 68);
     position: relative;
     padding: 10px 20px;
@@ -16,7 +17,7 @@
     .content {
       font-family: VT323;
       font-weight: 600;
-      font-size: 30px;
+      font-size: 20px;
       color: white;
     }
     .dot1 {
