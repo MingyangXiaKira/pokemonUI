@@ -4,9 +4,9 @@ import Button from "../Display/Button";
 import Card from "../Surface/Card";
 const Ash = ({ stage, number }) => {
   const descriptions = {
-    1: "Experience",
-    2: "Side Projects",
-    3: "Contact",
+    1: "Side Projects",
+    2: "Linkedin",
+    3: "Github",
   };
   const description = descriptions[number];
 

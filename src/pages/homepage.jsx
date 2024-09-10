@@ -58,11 +58,14 @@ const Homepage = () => {
 
   const navigateBasedOnNumber = () => {
     if (number === 1) {
-      navigate("/experience");
-    } else if (number === 2) {
       navigate("/project");
+    } else if (number === 2) {
+      window.open(
+        "https://www.linkedin.com/in/mingyang-xia-574306291/",
+        "_blank"
+      );
     } else if (number === 3) {
-      navigate("/contact");
+      window.open("https://github.com/MingyangXiaKira", "_blank");
     }
   };
 
@@ -122,12 +125,12 @@ const Homepage = () => {
                 {showButton2 && (
                   <>
                     <Button
-                      content={"<-"}
+                      content={"<"}
                       style={{ right: "165px" }}
                       onClick={handleLeftClick}
                     />
                     <Button
-                      content={"->"}
+                      content={">"}
                       style={{ right: "100px" }}
                       onClick={handleRightClick}
                     />
