@@ -29,9 +29,12 @@ const Homepage = () => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (stage === "stage1" && event.key === "Enter") {
+      if (stage === "stage1" && (event.key === "Enter" || event.key === " ")) {
         handleButtonClick();
-      } else if (stage === "stage2" && event.key === "Enter") {
+      } else if (
+        stage === "stage2" &&
+        (event.key === "Enter" || event.key === " ")
+      ) {
         navigateBasedOnNumber();
       } else if (stage === "stage2") {
         if (event.key === "ArrowLeft") {

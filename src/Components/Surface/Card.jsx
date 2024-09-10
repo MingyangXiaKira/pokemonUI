@@ -1,8 +1,8 @@
 import React from "react";
 import "./card.scss";
-const Card = ({ children, className = "" }) => {
+const Card = ({ children, style, className = "" }) => {
   return (
-    <div className={`pokeCard ${className}`}>
+    <div style={style} className={`pokeCard ${className}`}>
       <span className="dot1"></span>
       <span className="dot2"></span>
       <span className="dot3"></span>
